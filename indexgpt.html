@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALPHA UNITED ESPORTS</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+:root{
+  --bg:#322058;
+  --card:#5e32ee;
+  --glass:rgba(255,255,255,0.55);
+  --primary:#9b5cff;
+  --accent:#ff3c3c;
+  --text:#1f1f2e;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background:linear-gradient(120deg,#ede6ff,#f9f6ff);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:14px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:var(--glass);
+  backdrop-filter:blur(14px);
+  z-index:999;
+}
+
+.logo{
+  font-weight:800;
+  font-size:1.2rem;
+  color:var(--primary);
+}
+
+.nav-links{
+  display:flex;
+  gap:24px;
+}
+
+.nav-links a{
+  font-weight:500;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+.hamburger{
+  display:none;
+  font-size:1.4rem;
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:120px 20px 40px;
+}
+
+.hero h1{
+  font-size:clamp(2.4rem,5vw,3.6rem);
+  animation:fadeUp 1s ease forwards;
+}
+
+.hero span{
+  color:var(--primary);
+}
+
+.hero p{
+  max-width:600px;
+  margin:18px auto 32px;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+  animation-delay:.2s;
+}
+
+.btns{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 30px;
+  border-radius:30px;
+  font-weight:600;
+  border:2px solid var(--primary);
+  transition:.3s;
+}
+
+.btn.primary{
+  background:var(--primary);
+  color:rgb(2, 2, 2);
+}
+
+.btn:hover{
+  transform:translateY(-4px) scale(1.05);
+}
+
+/* ===== SECTIONS ===== */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:90px 20px;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:50px;
+  color:var(--primary);
+}
+
+/* ===== VIDEOS ===== */
+.videos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
+}
+
+iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:18px;
+  border:none;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  transition:.4s;
+}
+
+iframe:hover{
+  transform:translateY(-8px) scale(1.04);
+}
+
+/* ===== ABOUT ===== */
+.about{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  align-items:center;
+}
+
+.card{
+  background:var(--card);
+  padding:26px;
+  border-radius:22px;
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* ===== SHOP ===== */
+.shop{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:26px;
+}
+
+.product{
+  background:var(--card);
+  padding:26px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
+  transition:.4s;
+}
+
+.product i{
+  font-size:3rem;
+  color:var(--primary);
+  margin-bottom:14px;
+}
+
+.product:hover{
+  transform:translateY(-10px) scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#ece4ff;
+  padding:34px 20px;
+  text-align:center;
+}
+
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  margin-bottom:14px;
+}
+
+.socials a{
+  font-size:1.4rem;
+  transition:.3s;
+}
+
+.socials a:hover{
+  color:var(--primary);
+  transform:scale(1.25);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:white;
+    flex-direction:column;
+    width:200px;
+    padding:20px;
+    transform:translateX(100%);
+    transition:.3s;
+  }
+
+  .nav-links.active{
+    transform:translateX(0);
+  }
+
+  .hamburger{
+    display:block;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">ALPHA UNITED</div>
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#videos">Videos</a>
+    <a href="#about">About</a>
+    <a href="#shop">Shop</a>
+  </div>
+  <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+</nav>
+
+<section class="hero" id="home">
+  <div>
+    <h1>ALPHA UNITED <span>ESPORTS</span></h1>
+    <p>Light vibes. Heavy gameplay. Competitive eSports & content built for the next level.</p>
+    <div class="btns">
+      <a class="btn primary" target="_blank" href="https://www.youtube.com/channel/UC9LNEYuPc7RmrkI2FCeeadA">Subscribe</a>
+      <a class="btn" href="#videos">Watch Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <h2>Latest Videos</h2>
+  <div class="videos" id="videoContainer"></div>
+</section>
+
+<section id="about">
+  <h2>About Alpha United</h2>
+  <div class="about">
+    <div class="card">
+      <p>Alpha United Esports is built for gamers who grind hard and play smart. Clean content, competitive mindset, zero cringe.</p>
+    </div>
+    <div class="card">
+      <h3>🔥 Competitive</h3>
+      <p>High skill gameplay</p>
+    </div>
+    <div class="card">
+      <h3>⚡ Daily Content</h3>
+      <p>YouTube focused</p>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+  <h2>Merch</h2>
+  <div class="shop">
+    <div class="product">
+      <i class="fas fa-tshirt"></i>
+      <h4>Alpha Hoodie</h4>
+    </div>
+    <div class="product">
+      <i class="fas fa-hat-cowboy"></i>
+      <h4>Team Cap</h4>
+    </div>
+    <div class="product">
+      <i class="fas fa-mug-hot"></i>
+      <h4>Gaming Mug</h4>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="socials">
+    <a><i class="fab fa-youtube"></i></a>
+    <a><i class="fab fa-instagram"></i></a>
+    <a><i class="fab fa-discord"></i></a>
+    <a><i class="fab fa-x-twitter"></i></a>
+  </div>
+  <p>© 2026 Alpha United Esports</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.onclick = () => navLinks.classList.toggle("active");
+
+// YouTube RSS
+const channelId = "UC9LNEYuPc7RmrkI2FCeeadA";
+const rss = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+
+fetch(rss)
+.then(res=>res.json())
+.then(data=>{
+  const container = document.getElementById("videoContainer");
+  data.items.slice(0,3).forEach(item=>{
+    const id = item.guid.split(":").pop();
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube.com/embed/${id}`;
+    iframe.allowFullscreen = true;
+    container.appendChild(iframe);
+  });
+});
+</script>
+
+</body>
+</html>
